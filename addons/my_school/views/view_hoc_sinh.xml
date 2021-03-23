@@ -1,0 +1,29 @@
+<odoo>
+    <data>
+<!--        <record model="ir.ui.view" id="school.student">-->
+<!--            <field name="name">student list</field>-->
+<!--            <field name="model">school.student</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <tree>-->
+<!--                    <field name="name"/>-->
+<!--                    <field name="phong_hoc"/>-->
+<!--                    <field name="hoc_sinh_trong_lop"/>-->
+<!--                </tree>-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!--        id=school_action_window_student có dấu chấm nó sẽ không chạy-->
+        <record model="ir.actions.act_window" id="school_action_window_student">
+            <field name="name">Học sinh</field>
+            <field name="res_model">school.student</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+         <menuitem
+            name="Học sinh"
+            id="student_menu"
+            parent="school_menu_root"
+            action="school_action_window_student"
+         />
+    </data>
+</odoo>
