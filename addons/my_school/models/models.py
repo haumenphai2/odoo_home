@@ -17,14 +17,19 @@ class Student(models.Model):
     _description = 'Học sinh'
     _inherit = 'school.person'
 
-    hoc_sinh_lop = fields.Many2one('school.class')
-
+    hoc_sinh_lop = fields.Many2one('school.class', string='Học sinh lớp')
+    tinh_trang   = fields.Selection([
+        ('Da_tot_nghiep', 'Đã tốt nghiệp'),
+        ('Dang_hoc', 'Đang học')
+        ], default='Dang_hoc', string='Tình trạng')
+    
+    
 
 class Class(models.Model):
     _name = 'school.class'
     _description = 'quản lý trường học'
 
-    name = fields.Char(required=True, string='Tên lớp')
+    name = fields.Char(required=True, string='Tên lớp', index=True)
     phong_hoc = fields.Char(string="Số phòng")
     hoc_sinh_trong_lop = fields.One2many('school.student', 'hoc_sinh_lop', string='Học sinh của lớp')
 

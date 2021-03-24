@@ -85,6 +85,8 @@ Tính năng chính
         'views/views.xml',
         'views/view_hoc_sinh.xml',
         'views/templates.xml',
+        'datas/data_lop_hoc.xml',
+        'datas/data_hoc_sinh_test.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

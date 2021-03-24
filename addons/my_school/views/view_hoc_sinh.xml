@@ -1,16 +1,20 @@
 <odoo>
     <data>
-<!--        <record model="ir.ui.view" id="school.student">-->
-<!--            <field name="name">student list</field>-->
-<!--            <field name="model">school.student</field>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <tree>-->
-<!--                    <field name="name"/>-->
-<!--                    <field name="phong_hoc"/>-->
-<!--                    <field name="hoc_sinh_trong_lop"/>-->
-<!--                </tree>-->
-<!--            </field>-->
-<!--        </record>-->
+        <record model="ir.ui.view" id="school_list_student">
+           <field name="name">student list</field>
+           <field name="model">school.student</field>
+           <field name="arch" type="xml">
+               <tree>
+                   <field name="name" />
+                   <field name="age" />
+                   <field name="birth_day" />
+                   <field name="address" />
+                   <field name="gioi_tinh" />
+                   <field name="hoc_sinh_lop" />
+                   <field name="tinh_trang" />
+               </tree>
+           </field>
+        </record> 
 
 <!--        id=school_action_window_student có dấu chấm nó sẽ không chạy-->
         <record model="ir.actions.act_window" id="school_action_window_student">
