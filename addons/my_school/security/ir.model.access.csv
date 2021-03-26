@@ -1,4 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_person,person,model_school_person,base.group_user,1,1,1,1
+
 access_giao_vien,giao_vien,model_school_giaovien,base.group_user,1,1,1,1
 access_hoc_sinh,hoc_sinh,model_school_student,base.group_user,1,1,1,1
 access_lop_hoc,lop_hoc,model_school_class,base.group_user,1,1,1,1
+
+access_mon_hoc,mon_hoc,model_school_monhoc,base.group_user,1,1,1,1

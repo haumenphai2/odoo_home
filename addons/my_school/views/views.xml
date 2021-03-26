@@ -50,28 +50,7 @@
 	</record>
 	
     <!-- Top menu item -->
-    <menuitem
-            name="My School"
-            id="school_menu_root"
-            action="my_school.action_window"
-            sequence="0"
-    />
-    <menuitem
-    	id="class_menu"
-    	name="Lớp học"
-    	parent="school_menu_root"
-    	action="my_school.action_window"
-    	sequence="1"
-    	/>
-
-    <menuitem
-    	id="menu_test"
-    	name="Test 123"
-    	parent="school_menu_root"
-    	/>
-    <menuitem id="test1" name="Test Action URL" parent="menu_test" action="act_url" />
-    <menuitem id="test2" name="Test Action server" parent="menu_test" action="action_server" />
-    <menuitem id="test3" name="Test Action client" parent="menu_test" action="action_client" />	
+    
     
 <!--
     <menuitem name="Menu 1" id="my_school.menu_1" parent="my_school.menu_root"/>

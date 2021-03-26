@@ -1,5 +1,7 @@
 <odoo>
     <data>
+    	
+    
         <record model="ir.ui.view" id="school_list_student">
            <field name="name">student list</field>
            <field name="model">school.student</field>
@@ -23,11 +25,6 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-         <menuitem
-            name="Học sinh"
-            id="student_menu"
-            parent="school_menu_root"
-            action="school_action_window_student"
-         />
+         
     </data>
 </odoo>

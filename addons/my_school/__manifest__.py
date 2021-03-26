@@ -84,9 +84,14 @@ Tính năng chính
         'security/ir.model.access.csv',
         'views/views.xml',
         'views/view_hoc_sinh.xml',
+        'views/view_base.xml',
+        'views/view_giao_vien.xml',
+        'views/view_mon_hoc.xml',
         'views/templates.xml',
+        'views/school_menus.xml',
         'datas/data_lop_hoc.xml',
         'datas/data_hoc_sinh_test.xml',
+        'datas/data_mon_hoc.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

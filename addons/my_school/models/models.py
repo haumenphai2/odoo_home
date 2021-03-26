@@ -10,6 +10,10 @@ class GiaoVien(models.Model):
 
     luong = fields.Float(string='Lương')
     chu_nhiem_lop = fields.Many2one('school.class', string='Chủ nhiệm lớp')
+    bo_mon_day = fields.Many2many('school.monhoc', string='Bộ môn dạy')
+    
+    def test_v1(self):
+        print(type(self.luong), type(self.bo_mon_day))
 
 
 class Student(models.Model):
@@ -33,7 +37,32 @@ class Class(models.Model):
     phong_hoc = fields.Char(string="Số phòng")
     hoc_sinh_trong_lop = fields.One2many('school.student', 'hoc_sinh_lop', string='Học sinh của lớp')
 
+    tham_chieu = fields.Reference(selection=[('school.student', 'Học Sinh'), ('school.giaovien', 'Giáo viên')], string='Field Reference')
 
+class MonHoc(models.Model):
+    _name = 'school.monhoc'
+    _description = 'Mon hoc'
+    
+    name = fields.Char(required=True, string='Môn học')
+    giao_vien_ids = fields.Many2many('school.giaovien', string='Giáo viên dạy')
+    image = fields.Image(max_height=200)
+    
+    currency_id = fields.Many2one('res.currency', string='loại tiền', )
+    hoc_phi_mon = fields.Monetary(string='Học phí', currency_field='currency_id')
+    
+    
+    
+class BaoVe(models.Model):
+    _name = 'school.baove'
+    _inherit = 'school.person'
+    _description = 'bao ve'
+    _sequence = 'jj'
+    
+    
+    
+    
+    
+    
 
 
 

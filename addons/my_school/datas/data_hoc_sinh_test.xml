@@ -6,7 +6,7 @@
 			<field name="birth_day">2002-02-19</field>
 			<field name="address">Thủy Nguyên, Hải Phòng</field>
 			<field name="gioi_tinh">Nu_</field>
-			<field name="tinh_trang">Da_top_nghiep</field>
+			<field name="tinh_trang">Da_tot_nghiep</field>
 		</record>
 		<record id="student2" model="school.student">
 			<field name="name">Nguyễn Thị Lấp Lánh Ánh Lung Linh</field>
@@ -14,7 +14,7 @@
 			<field name="birth_day">2002-04-20</field>
 			<field name="address">Thủy Nguyên, Hải Phòng</field>
 			<field name="gioi_tinh">Nu_</field>
-			<field name="tinh_trang">Da_top_nghiep</field>
+			<field name="tinh_trang">Da_tot_nghiep</field>
 		</record>
 		
 		
