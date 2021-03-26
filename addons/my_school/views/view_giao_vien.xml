@@ -1,5 +1,4 @@
 <odoo>
-	<data>	
 		
 	
 		<record id="list_view_giao_vien" model="ir.ui.view">
@@ -75,5 +74,4 @@
 		</record>
 		
 		
-	</data>	
 </odoo>

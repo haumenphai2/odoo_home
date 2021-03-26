@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-
+from odoo.api import Environment
+import random
 
 class GiaoVien(models.Model):
     _name = 'school.giaovien'
@@ -13,7 +14,10 @@ class GiaoVien(models.Model):
     bo_mon_day = fields.Many2many('school.monhoc', string='Bộ môn dạy')
     
     def test_v1(self):
+        print('-----------------------------------------------------------------------')
         print(type(self.luong), type(self.bo_mon_day))
+        print(self.env['school.person'], Environment.user, self.env.user.name)
+        print('-----------------------------------------------------------------------')
 
 
 class Student(models.Model):
@@ -27,7 +31,10 @@ class Student(models.Model):
         ('Dang_hoc', 'Đang học')
         ], default='Dang_hoc', string='Tình trạng')
     
+    related_field_test = fields.Char(related='hoc_sinh_lop.name')
     
+    
+
 
 class Class(models.Model):
     _name = 'school.class'
@@ -37,7 +44,9 @@ class Class(models.Model):
     phong_hoc = fields.Char(string="Số phòng")
     hoc_sinh_trong_lop = fields.One2many('school.student', 'hoc_sinh_lop', string='Học sinh của lớp')
 
-    tham_chieu = fields.Reference(selection=[('school.student', 'Học Sinh'), ('school.giaovien', 'Giáo viên')], string='Field Reference')
+    tham_chieu = fields.Reference(
+        selection=[('school.student', 'Học Sinh'), ('school.giaovien', 'Giáo viên')], 
+        string='Field Reference')
 
 class MonHoc(models.Model):
     _name = 'school.monhoc'

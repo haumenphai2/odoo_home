@@ -1,7 +1,7 @@
 from odoo import models, fields, api
 
 from datetime import datetime
-from _ast import If, Try
+import random
 
 class Person(models.Model):
     _name = 'school.person'
@@ -15,10 +15,10 @@ class Person(models.Model):
         ('Nu_', 'Nữ')
     ],required=True, string='Giới tính', default='Nam_')
     
-    age = fields.Integer(readonly=True, string='Tuổi', compute='_compute_age')
+    age = fields.Integer(readonly=True, string='Tuổi', compute='_get_age')
     
     @api.depends('birth_day')
-    def _compute_age(self):
+    def _get_age(self):
         try:
             print(self)
 
@@ -27,4 +27,29 @@ class Person(models.Model):
                 o.age = now_year - o.birth_day.year
         except Exception as e:
             print('exception:', e)
+            
+    
+    test1 = fields.Char(compute = '_get_test1', store=True)
+    
+    @api.depends('name')
+    def _get_test1(self):
+        self.test1 = f'{random.randint(0,10000)}'
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             

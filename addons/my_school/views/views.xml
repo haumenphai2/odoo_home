@@ -1,5 +1,4 @@
 <odoo>
-  <data>
     <!-- explicit list view definition -->
     <record model="ir.ui.view" id="my_school.lop_hoc">
       <field name="name">my_school list</field>
@@ -63,5 +62,4 @@
     <menuitem name="Server to list" id="my_school" parent="my_school.menu_2"
               action="my_school.action_server"/>
 -->
-  </data>
 </odoo>

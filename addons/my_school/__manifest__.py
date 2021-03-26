@@ -82,6 +82,8 @@ Tính năng chính
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'security/school_group.xml',
+        'security/school_rule.xml',
         'views/views.xml',
         'views/view_hoc_sinh.xml',
         'views/view_base.xml',
