@@ -89,7 +89,7 @@ Tính năng chính
         'views/view_base.xml',
         'views/view_giao_vien.xml',
         'views/view_mon_hoc.xml',
-        'views/view_person_test.xml',
+        'views/view_models_test.xml',
         'views/templates.xml',
         'views/school_menus.xml',
         'datas/data_lop_hoc.xml',

@@ -1,0 +1,44 @@
+<odoo>
+	
+	<!-- Action person test -->
+	<record id="act_window_person_test" model="ir.actions.act_window">
+		<field name="name">Person Test</field>
+		<field name="res_model">school.persontest</field>
+        <field name="view_mode">tree,form</field>
+	</record>
+	
+	<!-- Action lao cong  -->
+	<record id="act_window_lao_cong" model="ir.actions.act_window">
+		<field name="name">Lao cong test thua ke</field>
+		<field name="res_model">school.laocong</field>
+        <field name="view_mode">tree,form</field>
+	</record>
+	
+	
+	<!--Menu Person test-->
+	<menuitem
+    	name="Models Test"
+    	id="model_test_menu_root"
+    	parent="school_menu_root"
+    	action="act_window_person_test"
+		sequence="6"
+		/>
+	
+	<!-- Sub menu: person, lao cong-->
+	<menuitem name="Person Test" id="person_test_menu" parent="model_test_menu_root" action="act_window_person_test"/>
+	<menuitem name="Lao công" id="laocong_menu" parent="model_test_menu_root" action="act_window_lao_cong" />
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</odoo>

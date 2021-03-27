@@ -36,13 +36,7 @@
 		sequence="5"
 		/>
 		
-	<menuitem
-    	name="Person Test"
-    	id="person_test_menu"
-    	parent="school_menu_root"
-    	action="act_window_person_test"
-		sequence="6"
-		/>
+	
 
     <menuitem
     	id="menu_test"

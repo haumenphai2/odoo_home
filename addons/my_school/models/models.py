@@ -17,8 +17,9 @@ class GiaoVien(models.Model):
         print('-----------------------------------------------------------------------')
         print(type(self.luong), type(self.bo_mon_day))
         print(self.env['school.person'], Environment.user, self.env.user.name)
+        print(self.luong, self.chu_nhiem_lop)
         print('-----------------------------------------------------------------------')
-
+       
 
 class Student(models.Model):
     _name = 'school.student'
@@ -38,11 +39,12 @@ class Student(models.Model):
 
 class Class(models.Model):
     _name = 'school.class'
-    _description = 'quản lý trường học'
+    _description = 'Lớp học'
 
     name = fields.Char(required=True, string='Tên lớp', index=True)
     phong_hoc = fields.Char(string="Số phòng")
-    hoc_sinh_trong_lop = fields.One2many('school.student', 'hoc_sinh_lop', string='Học sinh của lớp')
+    hoc_sinh_trong_lop = fields.One2many('school.student', 'hoc_sinh_lop',
+                                        string='Học sinh của lớp', copy=True)
 
     tham_chieu = fields.Reference(
         selection=[('school.student', 'Học Sinh'), ('school.giaovien', 'Giáo viên')], 
