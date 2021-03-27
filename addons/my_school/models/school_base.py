@@ -29,16 +29,7 @@ class Person(models.Model):
             print('exception:', e)
             
     
-    test1 = fields.Char(compute = '_get_test1', store=True)
     
-    @api.depends('name')
-    def _get_test1(self):
-        self.test1 = f'{random.randint(0,10000)}'
-
-        
-
-
-
 
 
 

@@ -42,17 +42,35 @@
 					</header>
 					
 					<sheet>
-						<group>
+<!-- 						<group colspan="6"> -->
+<!-- 							<group  col="2"> -->
+<!-- 								<field name="age"/> -->
+<!-- 								<field name="age" /> -->
+<!-- 							</group> -->
+							
+<!-- 							<group  col="2"> -->
+<!-- 								<field name="age"/> -->
+<!-- 								<field name="age" /> -->
+<!-- 							</group> -->
+							
+<!-- 							<group col="2" > -->
+<!-- 								<field name="age"/> -->
+<!-- 								<field name="age" /> -->
+<!-- 							</group> -->
+<!-- 						</group> -->
+					
+						<group col="4">
 							<field name="name" />
+							<field name="luong" />
 							<field name="age" />
-							<field name="birth_day" />
+							<field name="chu_nhiem_lop" />
+						</group>
+						<group>
+							<field name="birth_day" /> 
 							<field name="address" />
 							<field name="gioi_tinh" />
 						</group>
-						<group>
-							<field name="luong" />
-							<field name="chu_nhiem_lop" />
-						</group>
+						
 						<notebook>
 							<page string="Bộ môn dạy">
 								<field name="bo_mon_day" />
