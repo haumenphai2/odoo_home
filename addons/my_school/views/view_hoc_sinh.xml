@@ -1,7 +1,7 @@
 <odoo>
     <data>
     	
-    
+    	<!-- Tree view -->
         <record model="ir.ui.view" id="school_list_student">
            <field name="name">student list</field>
            <field name="model">school.student</field>
@@ -25,6 +25,30 @@
             <field name="view_mode">tree,form</field>
         </record>
 
+		<!-- Search view -->
+		<record id="search_view_student" model="ir.ui.view">
+			<field name="name">search view student</field>
+			<field name="model">school.student</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" />
+                    <field name="age" />
+                    <field name="birth_day" />
+                    <field name="address" />
+                    <field name="gioi_tinh" />
+                    <field name="hoc_sinh_lop" />
+                    <field name="tinh_trang" />
+                    
+                    <filter name="hoc_sinh_hoa_dong_lap_le" string="Học sinh ở Hoa Động hoặc Lập Lễ"
+                    	domain="['|', ('address', 'like', 'Lập Lễ'),
+                    				 ('address', 'like', 'Hoa Động')]" />
+				</search>
+			</field>
+ 		</record>	
+	
+
          
     </data>
+    
+    
 </odoo>
