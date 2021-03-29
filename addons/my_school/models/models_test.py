@@ -48,9 +48,17 @@ class LaoCong(models.Model):
     _inherits = {'school.person': 'person_id'}
     
     person_id = fields.Many2one('school.person')          
-            
-            
-            
+    
+
+class BuoiHoc(models.Model):
+    _name = 'school.test.buoihoc'
+    _description = 'test buổi học'
+    
+    start_date = fields.Datetime(default='2021-01-20 20:20:20')
+    end_date = fields.Datetime(default='2021-02-20 20:20:20')
+    int_test = fields.Integer()
+    name2 = fields.Char(default = 'name2 default')
+    html_field = fields.Html()      
             
             
             

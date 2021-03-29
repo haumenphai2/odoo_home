@@ -1,4 +1,6 @@
 <odoo>
+	
+
     <!-- explicit list view definition -->
     <record model="ir.ui.view" id="my_school.lop_hoc">
       <field name="name">my_school list</field>
@@ -47,6 +49,8 @@
 		<field name="params">{1:1, 2:2}</field>
 		
 	</record>
+	
+	
 	
     <!-- Top menu item -->
     

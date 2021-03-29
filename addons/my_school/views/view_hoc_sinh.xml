@@ -42,6 +42,10 @@
                     <filter name="hoc_sinh_hoa_dong_lap_le" string="Học sinh ở Hoa Động hoặc Lập Lễ"
                     	domain="['|', ('address', 'like', 'Lập Lễ'),
                     				 ('address', 'like', 'Hoa Động')]" />
+                     <group string="Group By">
+        				<filter name="group_by_gioi_tinh" string="Group by giới tính"
+                			context="{'group_by': 'gioi_tinh'}"/>
+    				</group>
 				</search>
 			</field>
  		</record>	

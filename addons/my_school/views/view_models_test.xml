@@ -30,7 +30,61 @@
 	
 	
 	
+<!--============================= View buổi học test  ==============================================================-->
+	 <!-- calendar view -->
+        <record model="ir.ui.view" id="session_calendar_view">
+            <field name="name">calendar buổi hoc</field>
+            <field name="model">school.test.buoihoc</field>
+            <field name="arch" type="xml">
+                <calendar string="Buổi học Calendar" date_start="start_date" date_stop="end_date">
+                    <field name="name2"/>
+                </calendar>
+            </field>
+        </record>
+        
+        <!-- Gantt View --> 
+        <!-- Not work. need module web_gantt -->
+        <record model="ir.ui.view" id="gantt_test_class">
+            <field name="name">gantt view test</field>
+            <field name="model">school.test.buoihoc</field>
+            <field name="arch" type="xml">
+                <gantt string="Gantt test"
+                       date_start="start_date" date_stop="end_date">
+                </gantt>
+            </field>
+        </record>
+        
+        <!-- Graph view -->
+        <record model="ir.ui.view" id="graph_view_test">
+            <field name="name">graph view test</field>
+            <field name="model">school.test.buoihoc</field>
+            <field name="arch" type="xml">
+                <graph string="Graph view khoahoc">
+                    <field name="name2"/>
+                    <field name="int_test" type="measure"/>
+                </graph>
+            </field>
+        </record>	
 	
+		<!-- List view -->
+		<record model="ir.ui.view" id="líst">
+            <field name="name">list view buoi hoc test</field>
+            <field name="model">school.test.buoihoc</field>
+            <field name="arch" type="xml">
+                <tree>
+                	<field name="name2" />
+                </tree>
+            </field>
+        </record>	
+	
+	
+	<!-- Action buổi học  -->
+	<record id="act_window_buoi_hoc" model="ir.actions.act_window">
+		<field name="name">Buổi học test</field>
+		<field name="res_model">school.test.buoihoc</field>
+        <field name="view_mode">tree,form,calendar,gantt,graph,kanban,pivot</field>
+	</record>
+	<menuitem name="Buổi học test" id="buoi_hoc_menu" parent="model_test_menu_root" action="act_window_buoi_hoc" />
 	
 	
 	

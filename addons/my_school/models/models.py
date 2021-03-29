@@ -49,6 +49,8 @@ class Class(models.Model):
     tham_chieu = fields.Reference(
         selection=[('school.student', 'Học Sinh'), ('school.giaovien', 'Giáo viên')], 
         string='Field Reference')
+    
+   
 
 class MonHoc(models.Model):
     _name = 'school.monhoc'

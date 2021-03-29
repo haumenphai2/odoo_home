@@ -1,0 +1,3 @@
+Thêm group trong search view student.
+Xem lại search view student.
+xem cả field có filter_domain.
