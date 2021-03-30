@@ -87,9 +87,19 @@
 	<menuitem name="Buổi học test" id="buoi_hoc_menu" parent="model_test_menu_root" action="act_window_buoi_hoc" />
 	
 	
+	<!-- ======================================================================== -->
 	
 	
+	 <act_window id="launch_session_wizard"
+                    name="Add Attendees"
+                    binding_model="school.laocong"
+                    res_model="school.test.wizards"
+                    view_mode="form"
+                    target="new"/>
+                    
+   
 	
+	<menuitem name="Wizard" id="dd" parent="model_test_menu_root" action="launch_session_wizard" />
 	
 	
 	

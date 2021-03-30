@@ -41,6 +41,14 @@ class person_test(models.Model):
                 },
             }
             
+    
+    
+    
+    user_id = fields.Many2one('res.users', default=lambda self:self.env.user)
+    
+    
+    
+    
 
 class LaoCong(models.Model):
     _name = 'school.laocong'
@@ -61,7 +69,16 @@ class BuoiHoc(models.Model):
     html_field = fields.Html()      
             
             
-            
+class test_wizards(models.TransientModel):
+    _name = 'school.test.wizards'
+    _description = "Test wizards"
+    buoi_hoc_id = fields.Many2one('school.test.buoihoc')
+    laocong_ids = fields.Many2many('school.laocong')       
+    
+    def subscribe(self):
+        for o in self.laocong_ids:
+            o.laocong_ids |= self.buoi_hoc_id
+        return {}       
             
             
             

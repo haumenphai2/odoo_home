@@ -18,6 +18,10 @@ class GiaoVien(models.Model):
         print(type(self.luong), type(self.bo_mon_day))
         print(self.env['school.person'], Environment.user, self.env.user.name)
         print(self.luong, self.chu_nhiem_lop)
+        print('uid: ', self.env.uid)
+        s = self.env.cr.execute('SELECT * FROM ir_ui_view')
+        print(s)
+        print(self.read(['name', 'luong']))
         print('-----------------------------------------------------------------------')
        
 
