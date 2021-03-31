@@ -46,7 +46,12 @@ class person_test(models.Model):
     
     user_id = fields.Many2one('res.users', default=lambda self:self.env.user)
     
+    test_domain = fields.Many2one('school.student', string='Test attr domain in field Many2one',
+                            domain=[('gioi_tinh', '=', 'Nu_')],
+                            help='domain lọc học sinh hiển thị sẵn có trong many2one()')
     
+    test_date = fields.Date(default = '2021-01-31')
+    test_datetime = fields.Datetime(default = '2021-01-31 20:00:00')
     
     
 
@@ -56,7 +61,7 @@ class LaoCong(models.Model):
     _inherits = {'school.person': 'person_id'}
     
     person_id = fields.Many2one('school.person')          
-    
+    level = fields.Char(string='Level Lao Công')
 
 class BuoiHoc(models.Model):
     _name = 'school.test.buoihoc'
@@ -72,12 +77,18 @@ class BuoiHoc(models.Model):
 class test_wizards(models.TransientModel):
     _name = 'school.test.wizards'
     _description = "Test wizards"
-    buoi_hoc_id = fields.Many2one('school.test.buoihoc')
-    laocong_ids = fields.Many2many('school.laocong')       
+    
+    
+    
+    def _default_laocong(self):
+        return self.env['school.laocong'].browse(self._context.get('active_id'))
+    
+    laocong_id = fields.Many2one('school.laocong', default=_default_laocong)
+    level = fields.Char(default='test 12313')
     
     def subscribe(self):
-        for o in self.laocong_ids:
-            o.laocong_ids |= self.buoi_hoc_id
+        for o in self.laocong_id:
+            o.level = self.level  
         return {}       
             
             

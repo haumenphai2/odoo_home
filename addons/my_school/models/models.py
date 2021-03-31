@@ -12,6 +12,8 @@ class GiaoVien(models.Model):
     luong = fields.Float(string='Lương')
     chu_nhiem_lop = fields.Many2one('school.class', string='Chủ nhiệm lớp')
     bo_mon_day = fields.Many2many('school.monhoc', string='Bộ môn dạy')
+    active = fields.Boolean(default=True)
+    
     
     def test_v1(self):
         print('-----------------------------------------------------------------------')
@@ -19,9 +21,13 @@ class GiaoVien(models.Model):
         print(self.env['school.person'], Environment.user, self.env.user.name)
         print(self.luong, self.chu_nhiem_lop)
         print('uid: ', self.env.uid)
+        print('user name: ', self.env.user.name)
         s = self.env.cr.execute('SELECT * FROM ir_ui_view')
         print(s)
         print(self.read(['name', 'luong']))
+        print(self.name)
+        print('\n=======================================\n')
+        print(self.env['school.giaovien'].search([]))
         print('-----------------------------------------------------------------------')
        
 
@@ -37,7 +43,6 @@ class Student(models.Model):
         ], default='Dang_hoc', string='Tình trạng')
     
     related_field_test = fields.Char(related='hoc_sinh_lop.name')
-    
     
 
 

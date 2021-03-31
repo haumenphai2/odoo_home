@@ -10,7 +10,6 @@ from operator import itemgetter
 from odoo import api, fields, models, tools, _
 from odoo.tools.safe_eval import safe_eval
 from odoo.exceptions import UserError, ValidationError
-
 _logger = logging.getLogger(__name__)
 
 DEFAULT_DATE_FORMAT = '%m/%d/%Y'

@@ -26,7 +26,7 @@
 	
 	<!-- Sub menu: person, lao cong-->
 	<menuitem name="Person Test" id="person_test_menu" parent="model_test_menu_root" action="act_window_person_test"/>
-	<menuitem name="Lao công" id="laocong_menu" parent="model_test_menu_root" action="act_window_lao_cong" />
+	<menuitem name="Lao công (Test kế thừa)" id="laocong_menu" parent="model_test_menu_root" action="act_window_lao_cong" />
 	
 	
 	
@@ -45,7 +45,7 @@
         <!-- Gantt View --> 
         <!-- Not work. need module web_gantt -->
         <record model="ir.ui.view" id="gantt_test_class">
-            <field name="name">gantt view test</field>
+            <field name="name">gantt view-test</field>
             <field name="model">school.test.buoihoc</field>
             <field name="arch" type="xml">
                 <gantt string="Gantt test"
@@ -88,18 +88,37 @@
 	
 	
 	<!-- ======================================================================== -->
+	<!-- Test Wizard  -->
+		<record model="ir.ui.view" id="wizard_test_id">
+            <field name="name">wizard_test</field>
+            <field name="model">school.test.wizards</field>
+            <field name="arch" type="xml">
+                <form string="wizard_test">
+					<group>
+						<field name="laocong_id"/>
+                    	<field name='level'/>
+                    	
+					</group>
+					<footer>
+                        <button name="subscribe" type="object"
+                                string="Subscribe" class="oe_highlight"/>
+                        or
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>	
 	
-	
+    
 	 <act_window id="launch_session_wizard"
-                    name="Add Attendees"
+                    name="Add Wizard Level Lao Công"
                     binding_model="school.laocong"
                     res_model="school.test.wizards"
                     view_mode="form"
-                    target="new"/>
+                    target="new"
+                    />
                     
-   
 	
-	<menuitem name="Wizard" id="dd" parent="model_test_menu_root" action="launch_session_wizard" />
 	
 	
 	

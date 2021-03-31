@@ -42,26 +42,9 @@
 					</header>
 					
 					<sheet>
-<!-- 						<group colspan="6"> -->
-<!-- 							<group  col="2"> -->
-<!-- 								<field name="age"/> -->
-<!-- 								<field name="age" /> -->
-<!-- 							</group> -->
-							
-<!-- 							<group  col="2"> -->
-<!-- 								<field name="age"/> -->
-<!-- 								<field name="age" /> -->
-<!-- 							</group> -->
-							
-<!-- 							<group col="2" > -->
-<!-- 								<field name="age"/> -->
-<!-- 								<field name="age" /> -->
-<!-- 							</group> -->
-<!-- 						</group> -->
-					
 						<group col="4">
 							<field name="name" />
-							<field name="luong" />
+							<field name="luong" 		/>
 							<field name="age" />
 							<field name="chu_nhiem_lop" />
 						</group>
