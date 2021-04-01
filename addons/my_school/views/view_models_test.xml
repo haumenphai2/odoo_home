@@ -1,4 +1,42 @@
 <odoo>
+	<!--   -->
+	<record id="form_pe" model="ir.ui.view">
+			<field name="name">giao vien form view</field>
+			<field name="model">school.persontest</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form name="Preorrp Vien Form">
+					<header>
+						<button string="Click me" name="click_button" type="object" class="btn btn-dark"/>
+					</header>
+					<sheet>
+						<group>
+							<field name="name" attrs="{'invisible': [('state', '=', 'het_han')],
+							 					       'required': [('state', '=', 'hong')], 
+							 			               'readonly': [('state','=','su_dung')]}"/>
+							<field name="state" />
+						</group>
+						<group>
+							<field name="age" />
+							<field name="address" />
+							<field name="gioi_tinh" />
+							<field name="birth_day" />
+						</group>
+						<group>
+							<field name="test1" />
+							<field name="test_sql_constraints1" />
+							<field name="test_sql_constraints2" />
+							<field name="int_field" />
+							<field name="user_id" />
+							<field name="test_domain" />
+							<field name="test_date" />
+							<field name="test_datetime" />
+						</group>
+					</sheet>
+				</form>
+			</field> 
+	</record>
+	
 	
 	<!-- Action person test -->
 	<record id="act_window_person_test" model="ir.actions.act_window">
@@ -60,6 +98,7 @@
             <field name="model">school.test.buoihoc</field>
             <field name="arch" type="xml">
                 <graph string="Graph view khoahoc">
+                	
                     <field name="name2"/>
                     <field name="int_test" type="measure"/>
                 </graph>
@@ -76,7 +115,7 @@
                 </tree>
             </field>
         </record>	
-	
+		<!-- Kaban, pivot -->
 	
 	<!-- Action buổi học  -->
 	<record id="act_window_buoi_hoc" model="ir.actions.act_window">

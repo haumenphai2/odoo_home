@@ -53,7 +53,16 @@ class person_test(models.Model):
     test_date = fields.Date(default = '2021-01-31')
     test_datetime = fields.Datetime(default = '2021-01-31 20:00:00')
     
-    
+  
+    state = fields.Selection([
+        ('su_dung', 'Sử dụng'), ('het_han', 'Hết hạn'), ('hong', 'Hỏng')
+        ], default = 'su_dung')
+
+
+    def click_button(self):
+        print(self.name)
+        return {'1':1}
+        
 
 class LaoCong(models.Model):
     _name = 'school.laocong'
