@@ -22,14 +22,21 @@ class GiaoVien(models.Model):
         print(self.luong, self.chu_nhiem_lop)
         print('uid: ', self.env.uid)
         print('user name: ', self.env.user.name)
-        s = self.env.cr.execute('SELECT * FROM ir_ui_view')
-        print(s)
+        s = self.env.cr.execute('SELECT * FROM school_giaovien')
+        print('s: ',s)
         print(self.read(['name', 'luong']))
         print(self.name)
         print('\n=======================================\n')
         print(self.env['school.giaovien'].search([]))
         print('-----------------------------------------------------------------------')
        
+    
+    def test_v2(self):
+        print('------------------------------------------------------------------------')
+        print('self.name: ', self.name)
+        print('selef.class_id',  self.chu_nhiem_lop)
+        print('------------------------------------------------------------------------')
+
 
 class Student(models.Model):
     _name = 'school.student'

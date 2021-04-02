@@ -8,6 +8,7 @@
 				<form name="Preorrp Vien Form">
 					<header>
 						<button string="Click me" name="click_button" type="object" class="btn btn-dark"/>
+						<button string="Test v2" name="test_v2" type="object" class="btn btn-dagger" />
 					</header>
 					<sheet>
 						<group>
@@ -32,6 +33,12 @@
 							<field name="test_date" />
 							<field name="test_datetime" />
 						</group>
+						<group>
+							<field name="test_constrains" />
+							<field name="phan_quyen_field" />
+							<field name="img_test" />
+						</group>
+						
 					</sheet>
 				</form>
 			</field> 

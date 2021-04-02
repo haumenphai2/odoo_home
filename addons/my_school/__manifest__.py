@@ -77,7 +77,7 @@ Tính năng chính
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','mail'],
 
     # always loaded
     'data': [
@@ -94,7 +94,8 @@ Tính năng chính
         'views/school_menus.xml',
         'datas/data_lop_hoc.xml',
         'datas/data_hoc_sinh_test.xml',
-        'datas/data_mon_hoc.xml'
+        'datas/data_mon_hoc.xml',
+        'datas/data_cron.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

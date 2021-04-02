@@ -1,5 +1,8 @@
 from odoo import api, models, fields
 import random
+from pygments.lexer import _inherit
+from odoo.exceptions import ValidationError
+i = 0;
 
 class person_test(models.Model):
     _name = 'school.persontest'
@@ -12,7 +15,7 @@ class person_test(models.Model):
         self.test1 = f'{random.randint(0,10000)}'
 
 
-    from odoo.exceptions import ValidationError
+    
     test_constrains = fields.Char()
     @api.constrains('test_constrains')
     def length_large(self):
@@ -63,6 +66,57 @@ class person_test(models.Model):
         print(self.name)
         return {'1':1}
         
+    phan_quyen_field = fields.Char(groups = 'my_school.group_giao_vien')
+
+
+    @api.constrains('name')
+    def testv3(self):
+        print('testv3: ',self.name)
+        
+    img_test = fields.Image()
+    
+    
+    def test_v2(self):
+        print('------------------------------------------------------------------------\n')
+        print('self.name:     ', self.name)
+        print('selef.user_id:   ',  self.user_id)
+        for o in self.user_id:
+            print(o, end="|")
+        print('\n\n------------------------------------------------------------------------')
+
+        
+class test_xx(models.Model):
+    _inherit = 'school.persontest'
+    _description = 'test onchange ke thua'
+    
+    
+    # Ghi đè onchange khi kế thừa model thì cái này sẽ chạy.
+    @api.onchange('int_field') 
+    def int_change(self):
+        if self.int_field >=20:
+            return {
+                'warning': {
+                    'title': "return of @api.constraint - Title",
+                    'message': "Int field không được lớn hơn 20",
+                },
+            }
+            
+    # Tương tự như trên, connstrains của model sẽ chạy.
+    @api.constrains('test_constrains')
+    def test_override_constrains(self):
+        if  self.test_constrains and len(self.test_constrains) >= 10:
+            raise ValidationError('test_constrains length >= 10!!!!!!!')
+        
+    
+    
+    @staticmethod
+    def run():
+        from datetime import datetime
+        now = datetime.now()
+        current_time = now.strftime("%H:%M:%S")
+        print("Current Time =", current_time)
+        print('cron running: ', f'{random.randint(0,100)}')        
+
 
 class LaoCong(models.Model):
     _name = 'school.laocong'
