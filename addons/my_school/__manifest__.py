@@ -80,8 +80,7 @@ Tính năng chính
     'depends': ['base','mail'],
 
     # always loaded
-    'data': [
-        'security/ir.model.access.csv',
+     'data': [
         'security/school_group.xml',
         'security/school_rule.xml',
         'views/views.xml',
@@ -95,7 +94,8 @@ Tính năng chính
         'datas/data_lop_hoc.xml',
         'datas/data_hoc_sinh_test.xml',
         'datas/data_mon_hoc.xml',
-        'datas/data_cron.xml'
+        'datas/data_cron.xml',
+        'security/ir.model.access.csv'
     ],
     # only loaded in demonstration mode
     'demo': [
