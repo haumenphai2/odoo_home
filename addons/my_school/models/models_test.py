@@ -64,6 +64,7 @@ class person_test(models.Model):
 
     def click_button(self):
         print(self.name)
+        raise ValidationError(f'{self.name}')
         return {'1':1}
         
     phan_quyen_field = fields.Char(groups = 'my_school.group_giao_vien')
