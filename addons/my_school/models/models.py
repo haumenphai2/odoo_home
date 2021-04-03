@@ -36,7 +36,10 @@ class GiaoVien(models.Model):
         print('self.name: ', self.name)
         print('selef.class_id',  self.chu_nhiem_lop)
         print('------------------------------------------------------------------------')
-
+    
+    
+    def print_report(self):
+        return self.env.ref('my_school.report_giao_vien1').report_action(self)
 
 class Student(models.Model):
     _name = 'school.student'

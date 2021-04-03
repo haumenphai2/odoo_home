@@ -95,7 +95,8 @@ Tính năng chính
         'datas/data_hoc_sinh_test.xml',
         'datas/data_mon_hoc.xml',
         'datas/data_cron.xml',
-        'security/ir.model.access.csv'
+        'security/ir.model.access.csv',
+        'views/reports.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
