@@ -20,7 +20,7 @@ class person_test(models.Model):
     @api.constrains('test_constrains')
     def length_large(self):
         if self.test_constrains and len(self.test_constrains) >=5:
-            print('heloo')
+            p   rint('heloo')
             # raise Exception("Test Exception")
             
 
