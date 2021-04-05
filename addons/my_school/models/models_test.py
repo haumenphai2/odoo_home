@@ -20,7 +20,7 @@ class person_test(models.Model):
     @api.constrains('test_constrains')
     def length_large(self):
         if self.test_constrains and len(self.test_constrains) >=5:
-            p   rint('heloo')
+            print('heloo')
             # raise Exception("Test Exception")
             
 
@@ -55,7 +55,7 @@ class person_test(models.Model):
     
     test_date = fields.Date(default = '2021-01-31')
     test_datetime = fields.Datetime(default = '2021-01-31 20:00:00')
-    
+    related_field_test = fields.Char(related='test_domain.name', string="Related Field Test 'test_domain.name'", readonly=False)
   
     state = fields.Selection([
         ('su_dung', 'Sử dụng'), ('het_han', 'Hết hạn'), ('hong', 'Hỏng')
@@ -84,7 +84,7 @@ class person_test(models.Model):
         for o in self.user_id:
             print(o, end="|")
         print('\n\n------------------------------------------------------------------------')
-
+    
         
 class test_xx(models.Model):
     _inherit = 'school.persontest'

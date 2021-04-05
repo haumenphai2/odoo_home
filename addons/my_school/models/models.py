@@ -28,6 +28,7 @@ class GiaoVien(models.Model):
         print(self.name)
         print('\n=======================================\n')
         print(self.env['school.giaovien'].search([]))
+        print(self.bo_mon_day.name)
         print('-----------------------------------------------------------------------')
        
     

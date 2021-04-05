@@ -37,6 +37,7 @@
 							<field name="test_constrains" />
 							<field name="phan_quyen_field" />
 							<field name="img_test" />
+							<field name="related_field_test" />
 						</group>
 						
 					</sheet>
