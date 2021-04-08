@@ -9,6 +9,10 @@
 					<header>
 						<button string="Click me123" name="click_button" type="object" class="btn btn-dark"/>
 						<button string="Test v2" name="test_v2" type="object" class="btn btn-dagger" />
+						<button name="delete_person" string="Delete Person" type="object" class="btn-dagger" help="Delete all person int_field=10"/>
+						<button name="create_person" string="create person" type="object" />
+						<button name="copy_person" string="copy person" type="object" />
+						<button name="test_ham" string="Test Ham" type="object" />
 					</header>
 					<sheet>
 						<group>

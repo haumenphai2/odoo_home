@@ -3646,7 +3646,7 @@ Fields:
                             }
                         )
                     raise
-
+                
             # validate inversed fields
             real_recs._validate_fields(inverse_fields)
 
